@@ -1,0 +1,3 @@
+institute="1234abcd"
+name=institute[::-1]
+print(name)
