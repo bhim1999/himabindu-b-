@@ -1,0 +1,236 @@
+https://github.com/bhim1999/himabindu-b-/blob/36bf3fdf87408eda411f9e6f49f12e64423dd2ba/oops%20assignment
+
+OOP Assignment
+Challenge 1: Square Numbers and Return Their Sum
+🔴 In this challenge, you need to implement a method that squares passing variables and returns their sum.
+
+Problem statement: Implement a class Point that has three properties and a method. All these attributes (properties and methods) should be public. This problem can be broken down into two tasks:
+
+Task 1: 👉 Implement a constructor to initialize the values of three properties: x, y, and z.
+
+Task 2: 👉 Implement a method, sqSum(), in the Point class which squares x, y, and z and returns their sum.
+
+Sample properties 1, 3, 5
+
+Sample method output 35
+
+Answer:
+
+class point():
+    def __init__(self,x,y,z):
+        self.x=x**2
+        self.y=y**2
+        self.z=z**2  
+    def add(self):
+        return self.x+self.y+self.z
+    def sq_sum(self):
+        sum = self.x+self.y+self.z           
+        return sum  
+a=int(input("Enter the first number: "))
+b=int(input("Enter the second number : "))
+c=int(input("enter the third number:"))
+obj=point(1,3,5)
+print("square_of_sum value: ",obj.add())
+
+
+
+Challenge 2: Implement a Calculator Class
+🔴 In this exercise, you have to implement a calculator that can perform addition, subtraction, multiplication, and division.
+
+Problem statement Write a Python class called Calculator by completing the tasks below:
+
+Task 1
+
+👉 Initializer
+
+Implement an initializer to initialize the values of num1 and num2. Properties
+
+• num1
+• num2
+Task 2
+
+👉 Methods
+
+• add() is a method that returns the sum of num1 and num2.
+• subtract() is a method that returns the subtraction of num1 from num2.
+• multiply() is a method that returns the product of num1 and num2.
+• divide() is a method that returns the division of num2 by num1.
+Input - Pass numbers (integers or floats) in the initializer.
+
+Output - addition, subtraction, division, and multiplication
+
+Answer:
+
+class cal():
+    def __init__(self,a,b):
+        self.a=a
+        self.b=b
+    def add(self):
+        return self.a+self.b
+    def mul(self):
+        return self.a*self.b
+    def div(self):
+        return self.a/self.b
+    def sub(self):
+        return self.a-self.b
+a=int(input("Enter first number: "))
+b=int(input("Enter second number: "))
+obj=cal(a,b)
+print("Add Result: ",obj.add())
+print("Sub Result: ",obj.sub())
+print("multiply Result: ",obj.mul())
+print("div Result: ",obj.div())
+
+
+Challenge 3: Implement the Complete Student Class
+🔴In this challenge, you will implement a student class
+Problem statement
+
+Implement the complete Student class by completing the tasks below
+
+Task
+
+👉 Implement the following properties as private:
+
+• name
+• rollNumber
+👉 Include the following methods to get and set the private properties above:
+
+• getName()
+• setName()
+• getRollNumber()
+• setRollNumber()
+Answer:
+
+class Student:
+
+    def __init__(self,name,rollnumber):
+        self.name=name
+        self.rollnumber=rollnumber
+        
+    def setName(self,name):
+        self.name=name
+        pass
+    def getName(self):
+        return self.name
+        pass
+    def setRollNumber(self,rollnumber):
+        self.rollnumber=rollnumber
+        pass
+    def getRollNumber(self):
+        return self.rollnumber
+        pass
+S1=Student("bindu",233)
+print("name:", S1.name)
+print("rollnumber:", S1.rollnumber)
+print("enter the getname:", S1.getName())
+print("enter the get rollnumber:", S1.getRollNumber())
+print("enter the setname:", S1.setName("Akshatha"))
+print("enter the setrollnumber:", S1.setRollNumber("355"))
+print("enter the getname:", S1.getName())
+print("enter the get rollnumber:", S1.getRollNumber())
+
+Challenge 4: Implement a Banking Account
+🔴 In this challenge, you will implement a banking account using the concepts of inheritance.
+Problem statement
+
+Implement the basic structure of a parent class, Account, and a child class, SavingsAccount.
+
+Task 1
+
+👉 Implement properties as instance variables, and set them to None or 0.
+
+Account has the following properties:
+
+    • title
+    • Balance
+SavingsAccount has the following properties:
+
+    • interestRate
+Task 2
+
+Create an initializer for Account class. The order of parameters should be the following, where Ashish is the title, and 5000 is the account balance:
+
+Account("Ashish", 5000)
+
+Task 3
+
+Implement properties as instance variables, and set them to None or 0.
+
+Create an initializer for the SavingsAccount class using the initializer of the Account class in the order below:
+
+Account("Ashish", 5000, 5)
+
+Answer:
+
+class BankAccount:
+	def __init__(self, balance):
+		self.balance = balance
+
+	def account_name(self, title):
+		self.title = title
+name = ("Himabindu")
+print("Enter the Title name:",name.title())
+class SavingsAccount(BankAccount):
+	def __init__(self, balance, interest_rate):
+		BankAccount.__init__(self,balance) # <--- self is a SavingsAccount but also a BankAccount
+		self.interest_rate = interest_rate
+account = SavingsAccount(1000, 0.03)
+account.interest_rate
+print("Enter the balance:",account.balance)
+print("Enter the account:", account.interest_rate)
+
+Challenge 5: Handling a Bank Account
+🔴 In this challenge, you will define methods for handling a bank account using concepts of inheritance.
+
+Problem statement
+
+In this challenge, we will be extending the previous challenge and implementing methods in the parent class and its corresponding child class.
+
+The initializers for both classes have been defined for you.
+
+Task 1
+
+In the Account class, implement the getBalance() method that returns balance.
+
+Task 2
+
+In the Account class, implement the deposit(amount) method that adds amount to the balance.
+
+It does not return anything.
+
+class Account:
+    def __init__(self, title=None, balance=0):
+        self.title = title
+        self.balance = balance
+    
+    def withdrawal(self, amount):
+        self.balance += amount
+        print(f"${amount} has been deposited in your account.")
+        pass
+
+    def deposit(self, amount):
+        if amount > self.balance:
+            print("Insufficient balance.")
+        else:
+            self.balance -= amount
+            print(f"${amount} has been withdrawn from your account.")
+        pass
+    def getBalance(self):
+        return amount
+        pass
+s=Account(2000,500)
+print("Enter the withdraw:",s.balance)
+class SavingsAccount(Account):
+    def __init__(self, title=None, balance=0, interestRate=0):
+            super().__init__(title, balance)
+            self.interestRate = interestRate
+    
+    def interestAmount(self):
+        return interestRate
+        pass
+s1=SavingsAccount(2000,5)
+print("Enter the interstrate:",s1.balance)
+
+
+ 
